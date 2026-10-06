@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxImage = document.getElementById("lightboxImage");
     const lightboxCaption = document.getElementById("lightboxCaption");
     const lightboxClose = document.getElementById("lightboxClose");
-    const galleryItems = document.querySelectorAll(".gallery-item");
+    const galleryItems = document.querySelectorAll(".gallery-item:not(.gallery-item--secret)");
 
     if (lightbox && lightboxImage && galleryItems.length) {
 

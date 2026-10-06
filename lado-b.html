@@ -226,9 +226,67 @@
         <button class="lightbox-close" id="lightboxClose" aria-label="Fechar foto">
             <i class="fa-solid fa-xmark"></i>
         </button>
+        <span class="lightbox-count" id="lightboxCount" aria-live="polite"></span>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Foto anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Próxima foto">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
         <div class="lightbox-frame">
             <img id="lightboxImage" src="" alt="">
             <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- Player de vídeo (abre ao clicar numa fita). Controlado pelo lado-b.js -->
+    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Player de vídeo" aria-hidden="true">
+
+        <button class="lightbox-close" id="vmClose" type="button" aria-label="Fechar vídeo">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="vm-frame" id="vmFrame">
+
+            <div class="vm-top">
+                <b id="vmNumero">FITA 01</b>
+                <span id="vmCaption"></span>
+            </div>
+
+            <video class="vm-video" id="vmVideo" playsinline></video>
+
+            <div class="vm-controls">
+
+                <input type="range" class="vm-seek" id="vmSeek" min="0" max="1000" value="0" step="1"
+                    aria-label="Posição do vídeo">
+
+                <div class="vm-row">
+                    <button type="button" class="vm-btn" id="vmBack" aria-label="Voltar 10 segundos">
+                        <i class="fa-solid fa-rotate-left"></i><small>10</small>
+                    </button>
+
+                    <button type="button" class="vm-btn vm-btn-main" id="vmPlay" aria-label="Pausar">
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+
+                    <button type="button" class="vm-btn" id="vmFwd" aria-label="Avançar 10 segundos">
+                        <i class="fa-solid fa-rotate-right"></i><small>10</small>
+                    </button>
+
+                    <span class="vm-time" id="vmTime">0:00 / 0:00</span>
+
+                    <button type="button" class="vm-btn" id="vmMute" aria-label="Desligar o som">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+
+                    <button type="button" class="vm-btn" id="vmFull" aria-label="Tela cheia">
+                        <i class="fa-solid fa-expand"></i>
+                    </button>
+                </div>
+
+                <p class="vm-keys">espaço: pausa · ← → : 10s · M: som · F: tela cheia · esc: fechar</p>
+
+            </div>
         </div>
     </div>
 

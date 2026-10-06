@@ -3420,6 +3420,26 @@ a {
     line-height: 1.4;
 }
 
+/* ---------- EASTER EGG: foto secreta que leva ao Lado B ---------- */
+
+.gallery-item--secret {
+    --tilt: -2.5deg;                      /* ângulo da rotação (mude aqui) */
+    display: block;                       /* <a> precisa ser block para aceitar transform */
+    color: inherit;
+    text-decoration: none;
+    transform: rotate(var(--tilt));
+}
+
+/* o hover padrão só faz translateY e apagaria a rotação; aqui juntamos os dois */
+.gallery-item--secret:hover {
+    transform: rotate(var(--tilt)) translateY(-6px);
+}
+
+.gallery-item--secret:focus-visible {
+    outline: 3px solid var(--black);
+    outline-offset: 4px;
+}
+
 .gallery-cta {
     display: flex;
     justify-content: center;
